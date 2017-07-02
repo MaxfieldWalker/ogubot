@@ -1,3 +1,5 @@
+"use strict";
+
 const Twit = require("twit");
 
 export class Twitter {
@@ -7,8 +9,14 @@ export class Twitter {
         this._client = new Twit(credentials);
     }
 
-    public getTweets(): Promise<{ data: TweetInfo[] }> {
-        return this._client.get("statuses/user_timeline", { user_id: this.userId });
+    public getTweets(count: number): Promise<{ data: TweetInfo[] }> {
+        return this._client.get("statuses/user_timeline",
+            {
+                user_id: this.userId,
+                trim_user: true,          // ユーザー情報を除く
+                exclude_replies: true,    // リプライを除く
+                count: count
+            });
     }
 }
 

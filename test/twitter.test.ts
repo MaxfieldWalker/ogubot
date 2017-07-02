@@ -11,10 +11,11 @@ suite("twitter test", () => {
             access_token: config.access_token,
             access_token_secret: config.access_token_secret
         });
-        return client.getTweets()
+        return client.getTweets(10)
             .then(result => {
                 const tweets = result.data;
-                const texts = tweets.map(x => [x.text, x.favorite_count]);
+                const texts = tweets
+                    .map(x => [new Date(x.created_at).toString(), x.text, x.favorite_count]);
                 console.log(texts);
             });
     });
