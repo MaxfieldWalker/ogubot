@@ -25,6 +25,7 @@
     "webpack": "^3.0.0"
   },
   "dependencies": {
+    "@line/bot-sdk": "^2.0.0",
     "moment": "^2.18.1",
     "twit": "^2.2.9"
   }
