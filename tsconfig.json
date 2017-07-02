@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "./built/",
+        "outDir": "dist",
         "sourceMap": true,
         "strict": true,
         "module": "commonjs",
@@ -14,7 +14,8 @@
         ]
     },
     "include": [
-        "./src/**/*"
+        "./src/**/*",
+        "./test/**/*"
     ],
     "exclude": [
         "node_modules"

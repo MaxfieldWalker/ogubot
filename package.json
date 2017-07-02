@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "description": "Ogubot",
   "scripts": {
+    "compile": "tsc -p .",
+    "test": "npm run compile && mocha",
     "build:production": "cross-env NODE_ENV=production webpack",
     "build:development": "cross-env NODE_ENV=development webpack",
     "deploy": "serverless deploy -v"
@@ -10,14 +12,19 @@
   "author": "Maxfield Walker",
   "license": "MIT",
   "devDependencies": {
+    "@types/mocha": "^2.2.41",
     "@types/node": "^8.0.7",
     "@types/webpack": "^3.0.1",
     "cross-env": "^5.0.1",
+    "mocha": "^3.4.2",
     "serverless-webpack": "^1.0.0-rc.4",
     "ts-loader": "^2.2.2",
     "tslint": "^5.4.3",
     "tslint-loader": "^3.5.3",
     "typescript": "^2.4.1",
     "webpack": "^3.0.0"
+  },
+  "dependencies": {
+    "twit": "^2.2.9"
   }
 }
