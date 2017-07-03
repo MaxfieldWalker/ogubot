@@ -10,6 +10,6 @@ suite("line test", () => {
             channelAccessToken: config.channelAccessToken,
             channelSecret: config.channelSecret
         });
-        return client.send(config.groupId, "はろ～");
+        // return client.send(config.groupId, "はろ～");
     });
 });

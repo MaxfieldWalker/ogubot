@@ -39,7 +39,7 @@ module.exports = {
         hints: false
     },
     resolve: {
-        extensions: [".ts", ".js"]
+        extensions: [".ts", ".js", ".json"]
     },
 };
 

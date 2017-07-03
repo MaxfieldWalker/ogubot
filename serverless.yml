@@ -1,4 +1,4 @@
-service: aws-nodejs
+service: line-bot
 
 provider:
   name: aws
@@ -6,17 +6,16 @@ provider:
   stage: dev
   region: ap-northeast-1 # Tokyo
 
-package:
-  exclude:
-    - node_modules/**
-
 functions:
   ogubot:
-    handler: dist/handler.ogubot
+    handler: dist/src/handler.ogubot
     events:
       # 定期実行の設定
       - schedule:
         name: my-schedule
-        description: Invoke per an hour
+        description: "Invoke per an hour"
         rate: cron(1 hour)
         enabled: true
+
+environment:
+  # consumer_key: ${file(test/config.json):consumer_key}
