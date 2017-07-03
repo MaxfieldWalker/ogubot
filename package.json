@@ -7,7 +7,8 @@
     "test": "npm run compile && mocha",
     "build:production": "cross-env NODE_ENV=production webpack",
     "build:development": "cross-env NODE_ENV=development webpack",
-    "deploy": "serverless deploy -v"
+    "deploy": "npm run build && serverless deploy -v",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "author": "Maxfield Walker",
   "license": "MIT",
@@ -17,7 +18,6 @@
     "@types/webpack": "^3.0.1",
     "cross-env": "^5.0.1",
     "mocha": "^3.4.2",
-    "serverless-webpack": "^1.0.0-rc.4",
     "ts-loader": "^2.2.2",
     "tslint": "^5.4.3",
     "tslint-loader": "^3.5.3",
@@ -27,6 +27,7 @@
   "dependencies": {
     "@line/bot-sdk": "^2.0.0",
     "moment": "^2.18.1",
+    "request": "^2.79.0",
     "twit": "^2.2.9"
   }
 }

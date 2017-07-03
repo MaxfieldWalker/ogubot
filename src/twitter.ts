@@ -12,7 +12,7 @@ export class Twitter {
     public getTweets(count: number): Promise<{ data: TweetInfo[] }> {
         return this._client.get("statuses/user_timeline",
             {
-                user_id: this.userId,
+                screen_name: this.userId,
                 trim_user: true,          // ユーザー情報を除く
                 exclude_replies: true,    // リプライを除く
                 count: count

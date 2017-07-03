@@ -7,7 +7,7 @@ module.exports = {
     target: "node",
     output: {
         libraryTarget: "commonjs",
-        path: path.join(__dirname, ".webpack"),
+        path: path.join(__dirname, "dist"),
         filename: "handler.js"
     },
     module: {
@@ -20,6 +20,11 @@ module.exports = {
                 options: {
                     fix: true
                 }
+            },
+            {
+                test: /\.tsx?$/,
+                loader: "ts-loader",
+                exclude: /node_modules/
             }
         ],
         loaders: [
@@ -32,21 +37,19 @@ module.exports = {
     },
     performance: {
         hints: false
-    }
+    },
+    resolve: {
+        extensions: [".ts", ".js"]
+    },
 };
 
 if (process.env.NODE_ENV === "production") {
     module.exports.plugins = (module.exports.plugins || []).concat([
-        new webpack.DefinePlugin({
-            "process.env": {
-                NODE_ENV: '"production"'
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        }),
+        // new webpack.DefinePlugin({
+        //     "process.env": {
+        //         NODE_ENV: '"production"'
+        //     }
+        // }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
         })

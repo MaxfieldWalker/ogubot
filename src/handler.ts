@@ -11,7 +11,7 @@ export function ogubot(event, context, callback) {
         access_token_secret: process.env.access_token_secret!
     });
 
-    const tweetCount = 10;
+    const tweetCount = 100;
     const thresholdMinutes = 120;
     const topTweetLikesThreshold = 3;
 
