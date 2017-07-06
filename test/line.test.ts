@@ -1,6 +1,6 @@
 "use strict";
 
-import { Line } from "../src/line";
+import { Line } from "../src/common/line";
 const config = require("../../test/config.json");
 
 

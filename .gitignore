@@ -9,3 +9,6 @@ jspm_packages
 built
 dist
 test/config.json
+fontconfig
+phantomjs-prebuilt
+phantomjs.exe

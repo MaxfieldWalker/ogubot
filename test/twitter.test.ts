@@ -1,6 +1,6 @@
 "use strict";
 
-import { Twitter } from "../src/twitter";
+import { Twitter } from "../src/common/twitter";
 const config = require("../../test/config.json");
 
 suite("twitter test", () => {
@@ -14,8 +14,7 @@ suite("twitter test", () => {
         return client.getTweets(10)
             .then(result => {
                 const tweets = result.data;
-                const texts = tweets
-                    .map(x => [new Date(x.created_at).toString(), x.text, x.favorite_count]);
+                const texts = tweets;
                 console.log(texts);
             });
     });

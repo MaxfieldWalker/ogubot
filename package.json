@@ -13,20 +13,24 @@
   "license": "MIT",
   "devDependencies": {
     "@types/mocha": "^2.2.41",
-    "@types/node": "^8.0.7",
+    "@types/node": "^8.0.9",
+    "@types/phantom": "^3.2.1",
     "@types/webpack": "^3.0.1",
     "cross-env": "^5.0.1",
     "mocha": "^3.4.2",
     "request": "^2.79.0",
     "ts-loader": "^2.2.2",
-    "tslint": "^5.4.3",
+    "tslint": "^5.5.0",
     "tslint-loader": "^3.5.3",
     "typescript": "^2.4.1",
     "webpack": "^3.0.0"
   },
   "dependencies": {
     "@line/bot-sdk": "^2.0.0",
+    "aws-sdk": "^2.82.0",
+    "axios": "^0.16.2",
     "moment": "^2.18.1",
+    "phantom": "^4.0.4",
     "twit": "^2.2.9"
   }
 }
